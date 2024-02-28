@@ -4,7 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .project-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .project-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,22 +60,23 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Your introduction goes here.</p>
+        <p>Your introduction goes here. Mention your skills and technologies you like.</p>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
 
-        <div class="project" onmouseover="showDescription('project1')" onmouseout="hideDescription('project1')">
-            <img src="project1.jpg" alt="Project 1">
-            <h3>Project 1</h3>
-            <p id="project1-desc" class="project-description">Description of Project 1.</p>
+        <button class="project-button" onclick="showDescription('robotProject')">Balancing Robot</button>
+        <button class="project-button" onclick="showDescription('homeAutomation')">Home Automation</button>
+
+        <div id="robotProject" class="project-description">
+            <h3>Balancing Robot</h3>
+            <p>Description of your Balancing Robot project.</p>
         </div>
 
-        <div class="project" onmouseover="showDescription('project2')" onmouseout="hideDescription('project2')">
-            <img src="project2.jpg" alt="Project 2">
-            <h3>Project 2</h3>
-            <p id="project2-desc" class="project-description">Description of Project 2.</p>
+        <div id="homeAutomation" class="project-description">
+            <h3>Home Automation</h3>
+            <p>Description of your Home Automation project.</p>
         </div>
     </section>
 
@@ -38,7 +84,21 @@
         <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function showDescription(projectId) {
+            // Hide all project descriptions
+            const projectDescriptions = document.querySelectorAll('.project-description');
+            projectDescriptions.forEach(description => {
+                description.style.display = 'none';
+            });
+
+            // Show the selected project description
+            const selectedProject = document.getElementById(projectId);
+            if (selectedProject) {
+                selectedProject.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
 
