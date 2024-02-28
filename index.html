@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Portfolio!</h1>
-    <!-- Your content here -->
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Your introduction goes here.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project" onmouseover="showDescription('project1')" onmouseout="hideDescription('project1')">
+            <img src="project1.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p id="project1-desc" class="project-description">Description of Project 1.</p>
+        </div>
+
+        <div class="project" onmouseover="showDescription('project2')" onmouseout="hideDescription('project2')">
+            <img src="project2.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p id="project2-desc" class="project-description">Description of Project 2.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
+
